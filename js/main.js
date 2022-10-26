@@ -4,17 +4,28 @@ const images = ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg','img/05.j
 // seleziono la classe items a cui andr' ad agganciare il mio div item contente le img
 const itemsSel = document.querySelector(".items") 
 
-
+let itemContent = ''
 // creo ciclo che mi andra' ad aggiungere i div con le img all'interno di items
 for (let i = 0; i < images.length; i++) {
-    const item = document.createElement("div");
-    item.classList.add("item")
-    if ( i === 0){
-        item.classList.add("active")
-    }
-    const img = document.createElement("img")
-    img.setAttribute("src", images[i])
-    item.append(img)
-    itemsSel.append(item)
+    itemContent += `
+        <div class="item">
+            <img src="${images[i]}" alt="">
+        </div>`;
 
 }
+let active = 0
+itemsSel.innerHTML += itemContent
+
+
+
+
+
+// creo l'evento che scatena il cambio delle img
+const prev = document.querySelector(".next");
+
+prev.addEventListener('click', function(){
+   
+   
+   
+
+})
