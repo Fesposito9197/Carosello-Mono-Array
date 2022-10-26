@@ -21,9 +21,9 @@ itemsSel.innerHTML += itemContent
 
 
 // creo l'evento che scatena il cambio delle img
-const prev = document.querySelector(".next");
+const next = document.querySelector(".next");
 
-prev.addEventListener('click', function(){
+next.addEventListener('click', function(){
    
    
    
