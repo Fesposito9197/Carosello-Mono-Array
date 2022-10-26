@@ -7,13 +7,20 @@ const itemsSel = document.querySelector(".items")
 let itemContent = ''
 // creo ciclo che mi andra' ad aggiungere i div con le img all'interno di items
 for (let i = 0; i < images.length; i++) {
-    itemContent += `
+   
+    if( i === 0){
+        itemContent += `
+        <div class="item active">
+            <img src="${images[i]}" alt="">
+        </div>`;
+    } else{
+        itemContent += `
         <div class="item">
             <img src="${images[i]}" alt="">
         </div>`;
-
+    }
 }
-let active = 0
+
 itemsSel.innerHTML += itemContent
 
 
