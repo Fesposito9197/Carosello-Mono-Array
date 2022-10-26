@@ -10,10 +10,15 @@ for (let i = 0; i < images.length; i++) {
    
     if( i === 0){
         itemContent += `
-        <div class="item active">
+        <div  class="item active first-item">
             <img src="${images[i]}" alt="">
         </div>`;
-    } else{
+    } else if ( i == images.length - 1 ){
+        itemContent += `
+        <div class="item last-item">
+            <img src="${images[i]}" alt="">
+        </div>`;
+    }else{
         itemContent += `
         <div class="item">
             <img src="${images[i]}" alt="">
@@ -23,7 +28,7 @@ for (let i = 0; i < images.length; i++) {
 
 itemsSel.innerHTML += itemContent
 
-
+let active = 0
 
 
 
@@ -31,8 +36,15 @@ itemsSel.innerHTML += itemContent
 const next = document.querySelector(".next");
 
 next.addEventListener('click', function(){
-   
-   
-   
-
+    //seleziono l'elemento con la classe active 
+    let activeElement = document.querySelector('.active');
+    console.log(activeElement)
+    //rimuovo la classe active dal primo elemento
+    activeElement.classList.remove('active');
+    // sposto la classe active al secondo elemento
+    let nextItem = activeElement.nextElementSibling;
+    console.log(nextItem)
+    nextItem.classList.add('active')
+    // blocco il programma quando raggiungo la classe last item 
+    
 })
