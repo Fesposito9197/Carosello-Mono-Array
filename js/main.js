@@ -10,12 +10,12 @@ for (let i = 0; i < images.length; i++) {
    
     if( i === 0){
         itemContent += `
-        <div  class="item active first-item">
+        <div  class="item active">
             <img src="${images[i]}" alt="">
         </div>`;
     } else if ( i == images.length - 1 ){
         itemContent += `
-        <div class="item last-item">
+        <div class="item ">
             <img src="${images[i]}" alt="">
         </div>`;
     }else{
@@ -31,6 +31,7 @@ itemsSel.innerHTML += itemContent
 let active = 0
 
 
+let img = document.querySelectorAll('.item')
 
 // creo l'evento che scatena il cambio delle img
 const next = document.querySelector(".next");
@@ -44,7 +45,12 @@ next.addEventListener('click', function(){
     // sposto la classe active al secondo elemento
     let nextItem = activeElement.nextElementSibling;
     console.log(nextItem)
-    nextItem.classList.add('active')
-    // blocco il programma quando raggiungo la classe last item 
+    if(nextItem !== null){
+        nextItem.classList.add('active')
+    }else{
+        document.querySelector(".item").classList.add("active")
+    }
+    
+    
     
 })
